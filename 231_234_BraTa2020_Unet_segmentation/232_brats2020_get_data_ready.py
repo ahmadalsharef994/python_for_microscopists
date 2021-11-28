@@ -207,7 +207,7 @@ for semantic segmentation using data generators.
 
 pip install split-folders
 """
-import splitfolders  # or import split_folders
+import split-folders as splitfolders  # or import split_folders
 
 input_folder = 'BraTS2020_TrainingData/input_data_3channels/'
 output_folder = 'BraTS2020_TrainingData/input_data_128/'

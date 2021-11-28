@@ -21,8 +21,8 @@ You can change input image sizes to customize for your computing resources.
 import os
 import numpy as np
 from custom_datagen import imageLoader
-#import tensorflow as tf
-import keras
+import tensorflow
+from tensorflow import keras
 from matplotlib import pyplot as plt
 import glob
 import random

@@ -68,8 +68,9 @@ import pandas as pd
 columns = ['0','1', '2', '3']
 df = pd.DataFrame(columns=columns)
 train_mask_list = sorted(glob.glob('BraTS2020_TrainingData/input_data_128/train/masks/*.npy'))
+print("Number of train images: ", len(train_mask_list))
 for img in range(len(train_mask_list)):
-    print(img)
+    #print(img)
     temp_image=np.load(train_mask_list[img])
     temp_image = np.argmax(temp_image, axis=3)
     val, counts = np.unique(temp_image, return_counts=True)
@@ -181,7 +182,7 @@ print(model.output_shape)
 history=model.fit(train_img_datagen,
           steps_per_epoch=steps_per_epoch,
           epochs=100,
-          verbose=1,
+          verbose=2,
           validation_data=val_img_datagen,
           validation_steps=val_steps_per_epoch,
           )

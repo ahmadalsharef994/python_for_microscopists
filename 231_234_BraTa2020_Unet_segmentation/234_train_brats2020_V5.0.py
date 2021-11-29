@@ -213,7 +213,7 @@ plt.ylabel('Accuracy')
 plt.legend()
 plt.show()
 #################################################
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 
 #Load model for prediction or continue training
 
@@ -251,7 +251,7 @@ my_model = load_model('saved_models/brats_3d_100epochs_simple_unet_weighted_dice
 #Verify IoU on a batch of images from the test dataset
 #Using built in keras function for IoU
 #Only works on TF > 2.0
-from keras.metrics import MeanIoU
+from tensorflow.keras.metrics import MeanIoU
 
 batch_size=8 #Check IoU for a batch of images
 test_img_datagen = imageLoader(val_img_dir, val_img_list, 

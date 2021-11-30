@@ -181,7 +181,7 @@ print(model.output_shape)
 
 history=model.fit(train_img_datagen,
           steps_per_epoch=steps_per_epoch,
-          epochs=100,
+          epochs=10,
           verbose=2,
           validation_data=val_img_datagen,
           validation_steps=val_steps_per_epoch,
@@ -203,7 +203,8 @@ plt.ylabel('Loss')
 plt.legend()
 plt.show()
 
-acc = history.history['accuracy']
+
+acc = history.history['acc']
 val_acc = history.history['val_accuracy']
 
 plt.plot(epochs, acc, 'y', label='Training accuracy')

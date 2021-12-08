@@ -205,7 +205,7 @@ plt.show()
 
 
 acc = history.history['acc']
-val_acc = history.history['val_accuracy']
+val_acc = history.history['val_acc']
 
 plt.plot(epochs, acc, 'y', label='Training accuracy')
 plt.plot(epochs, val_acc, 'r', label='Validation accuracy')

@@ -271,9 +271,9 @@ n_classes = 4
 IOU_keras = MeanIoU(num_classes=n_classes)  
 IOU_keras.update_state(test_pred_batch_argmax, test_mask_batch_argmax)
 
-tensorflow.enable_eager_execution()
+# tensorflow.enable_eager_execution()
 
-print("Mean IoU =", IOU_keras.result().numpy())
+# print("Mean IoU =", IOU_keras.result().numpy())
 
 #############################################
 #Predict on a few test images, one at a time

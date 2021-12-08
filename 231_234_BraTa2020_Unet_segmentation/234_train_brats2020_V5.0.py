@@ -204,8 +204,8 @@ plt.legend()
 plt.show()
 
 
-acc = history.history['acc']
-val_acc = history.history['val_acc']
+acc = history.history['accuracy']
+val_acc = history.history['val_accuracy']
 
 plt.plot(epochs, acc, 'y', label='Training accuracy')
 plt.plot(epochs, val_acc, 'r', label='Validation accuracy')

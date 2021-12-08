@@ -223,31 +223,31 @@ from tensorflow.keras.models import load_model
 #The following gives an error: Unknown loss function: dice_loss_plus_1focal_loss
 #This is because the model does not save loss function and metrics. So to compile and 
 #continue training we need to provide these as custom_objects.
-my_model = load_model('saved_models/brats_3d_100epochs_simple_unet_weighted_dice.hdf5')
+# my_model = load_model('saved_models/brats_3d_100epochs_simple_unet_weighted_dice.hdf5')
 
 #So let us add the loss as custom object... but the following throws another error...
 #Unknown metric function: iou_score
-my_model = load_model('saved_models/brats_3d_100epochs_simple_unet_weighted_dice.hdf5', 
-                      custom_objects={'dice_loss_plus_1focal_loss': total_loss})
+# my_model = load_model('saved_models/brats_3d_100epochs_simple_unet_weighted_dice.hdf5', 
+#                       custom_objects={'dice_loss_plus_1focal_loss': total_loss})
 
 #Now, let us add the iou_score function we used during our initial training
-my_model = load_model('saved_models/brats_3d_100epochs_simple_unet_weighted_dice.hdf5', 
-                      custom_objects={'dice_loss_plus_1focal_loss': total_loss,
-                                      'iou_score':sm.metrics.IOUScore(threshold=0.5)})
+# my_model = load_model('saved_models/brats_3d_100epochs_simple_unet_weighted_dice.hdf5', 
+#                       custom_objects={'dice_loss_plus_1focal_loss': total_loss,
+#                                       'iou_score':sm.metrics.IOUScore(threshold=0.5)})
 
 #Now all set to continue the training process. 
-history2=my_model.fit(train_img_datagen,
-          steps_per_epoch=steps_per_epoch,
-          epochs=1,
-          verbose=1,
-          validation_data=val_img_datagen,
-          validation_steps=val_steps_per_epoch,
-          )
+# history2=my_model.fit(train_img_datagen,
+#           steps_per_epoch=steps_per_epoch,
+#           epochs=1,
+#           verbose=1,
+#           validation_data=val_img_datagen,
+#           validation_steps=val_steps_per_epoch,
+#           )
 #################################################
 
 #For predictions you do not need to compile the model, so ...
-my_model = load_model('saved_models/brats_3d_100epochs_simple_unet_weighted_dice.hdf5', 
-                      compile=False)
+# my_model = load_model('saved_models/brats_3d_100epochs_simple_unet_weighted_dice.hdf5', 
+#                       compile=False)
 
 
 #Verify IoU on a batch of images from the test dataset

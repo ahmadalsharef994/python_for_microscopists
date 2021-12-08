@@ -218,6 +218,7 @@ plt.show()
 from tensorflow.keras.models import load_model
 
 #Load model for prediction or continue training
+my_model = model
 
 #For continuing training....
 #The following gives an error: Unknown loss function: dice_loss_plus_1focal_loss

@@ -270,6 +270,9 @@ test_pred_batch_argmax = np.argmax(test_pred_batch, axis=4)
 n_classes = 4
 IOU_keras = MeanIoU(num_classes=n_classes)  
 IOU_keras.update_state(test_pred_batch_argmax, test_mask_batch_argmax)
+
+tensorflow.enable_eager_execution()
+
 print("Mean IoU =", IOU_keras.result().numpy())
 
 #############################################

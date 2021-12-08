@@ -154,7 +154,7 @@ dice_loss = sm.losses.DiceLoss(class_weights=np.array([wt0, wt1, wt2, wt3]))
 focal_loss = sm.losses.CategoricalFocalLoss()
 total_loss = dice_loss + (1 * focal_loss)
 
-metrics = ['accuracy', sm.metrics.IOUScore(threshold=0.5)]
+metrics = ['accuracy', sm.metrics.IOUScore(threshold=0.5), sm.metrics.Precision()]
 
 LR = 0.0001
 optim = keras.optimizers.Adam(LR)

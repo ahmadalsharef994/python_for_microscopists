@@ -181,7 +181,7 @@ print(model.output_shape)
 
 history=model.fit(train_img_datagen,
           steps_per_epoch=steps_per_epoch,
-          epochs=10,
+          epochs=4,
           verbose=2,
           validation_data=val_img_datagen,
           validation_steps=val_steps_per_epoch,

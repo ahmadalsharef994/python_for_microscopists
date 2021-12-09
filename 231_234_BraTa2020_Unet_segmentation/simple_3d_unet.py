@@ -75,7 +75,6 @@ def simple_unet_model(IMG_HEIGHT, IMG_WIDTH, IMG_DEPTH, IMG_CHANNELS, num_classe
      
     model = Model(inputs=[inputs], outputs=[outputs])
     #compile model outside of this function to make it flexible. 
-    model.summary()
     
     return model
 
